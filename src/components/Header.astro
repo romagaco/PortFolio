@@ -4,70 +4,19 @@ import GithubIcon from '../assets/img/icons/github.svg?raw'; // Usa ?raw para ob
 import SunIcon from '../assets/img/icons/sun.svg?raw';
 import MoonIcon from '../assets/img/icons/moon.svg?raw';
 
-// 2. PROPS (Propiedades que puede recibir el componente)
-// Definimos los enlaces de navegación
-const navLinks = [
-  { href: '/', text: 'Inicio' },
-  { href: '/proyectos', text: 'Proyectos' },
-  { href: '/contacto', text: 'Contacto' },
-];
-
-// 3. Clases de Tailwind
-// Definidas aquí para simplificar la lectura del HTML
-const iconClass = "w-6 h-6 fill-current hover:text-green-400 transition-colors";
 
 ---
 
 <header class="bg-gray-900 text-white shadow-lg border-b border-green-500/20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-    
-    <a href="/" class="flex items-center space-x-2">
-      <span class="text-2xl tracking-widest font-press-start text-green-400 hover:text-green-300 transition-colors">
-        CORONA
-      </span>
-      
-      </a>
-
-    <nav class="flex items-center space-x-6">
-      
-      <ul class="flex space-x-4 font-quicksand text-base">
-        {navLinks.map((link) => (
-          <li>
-            <a 
-              href={link.href} 
-              class="text-gray-300 hover:text-green-400 transition-colors duration-300"
-              aria-label={`Ir a ${link.text}`}
-            >
-              {link.text}
-            </a>
-          </li>
-        ))}
+  <div class="container mx-auto px-4 py-2">
+    <h1 class="text-2xl font-bold">Roberto Corona</h1>
+    <nav>
+      <ul class="flex space-x-4">
+        <li><a href="/" class="hover:text-green-400">CV</a><img src="../assets/img/icons/download.svg" alt="CV" class="w-6 h-6"></li>
+        <li><a href="#" class="hover:text-green-400">Stack</a><img src="../assets/img/icons/diagonal-arrow.svg" alt="Stack" class="w-6 h-6"></li>
+        <li><a href="#" class="hover:text-green-400">Certificaciones</a><img src="../assets/img/icons/diagonal-arrow.svg" alt="Certificaciones" class="w-6 h-6"></li>
+        <li><a href="#" class="hover:text-green-400">Contacto</a><img src="../assets/img/icons/diagonal-arrow.svg" alt="Contacto" class="w-6 h-6"></li>
       </ul>
-      
-      <div class="h-6 w-px bg-gray-700"></div>
-
-      <div class="flex space-x-4 items-center">
-
-        <a 
-          href="TU_PERFIL_GITHUB" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class={iconClass}
-          set:html={GithubIcon}
-          aria-label="GitHub Profile"
-        >
-        </a>
-
-        <button 
-          id="theme-toggle" 
-          class={iconClass + " text-yellow-300"} 
-          aria-label="Toggle theme"
-          data-current-theme="light"
-        >
-          <Fragment set:html={SunIcon} />
-        </button>
-
-      </div>
     </nav>
   </div>
 </header>
