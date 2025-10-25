@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* src/styles/global.css */
 
 /* 1. Fuente Pixel Art */
