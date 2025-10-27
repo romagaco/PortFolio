@@ -1,23 +1,68 @@
 ---
-
-import GithubIcon from '../assets/img/icons/github.svg?raw'; // Usa ?raw para obtener el SVG como string
-import SunIcon from '../assets/img/icons/sun.svg?raw';
-import MoonIcon from '../assets/img/icons/moon.svg?raw';
-
-
+import DownloadIcon from '../../public/img/icons/download.svg';
 ---
 
-<header class="bg-gray-900 text-white shadow-lg border-b border-green-500/20">
-  <div class="container mx-auto px-4 py-2">
-    <h1 class="text-2xl font-bold">Roberto Corona</h1>
-    <nav>
-      <ul class="flex space-x-4">
-        <li><a href="/" class="hover:text-green-400">CV</a><img src="../assets/img/icons/download.svg" alt="CV" class="w-6 h-6"></li>
-        <li><a href="#" class="hover:text-green-400">Stack</a><img src="../assets/img/icons/diagonal-arrow.svg" alt="Stack" class="w-6 h-6"></li>
-        <li><a href="#" class="hover:text-green-400">Certificaciones</a><img src="../assets/img/icons/diagonal-arrow.svg" alt="Certificaciones" class="w-6 h-6"></li>
-        <li><a href="#" class="hover:text-green-400">Contacto</a><img src="../assets/img/icons/diagonal-arrow.svg" alt="Contacto" class="w-6 h-6"></li>
+
+
+<header class="bg-[#374151]" >
+<!-- Header Centrado Superior -->
+  <header class="bg-gray-900 text-white py-8 border-b-2 border-[#99eb5f]">  <!-- Borde verde lima para glow -->
+    <div class="container mx-auto px-4 flex items-center justify-center gap-4">
+      <img src="/img/icons/crown1.svg" alt="Corona" class="w-8 h-8 animate-bounce text-[#99eb5f]">  <!-- Color verde en el SVG si es fill -->
+      <h1 class="text-3xl font-bold text-center font-press-start text-[#99eb5f]">Roberto Corona</h1>  <!-- Verde para pop -->
+    </div>
+  </header>
+
+  <!-- Nav Centrado Debajo -->
+  <nav class="bg-gray-900 text-white py-4 border-b-2 border-[#99eb5f]"">  <!-- Fondo oscuro como terminal -->
+    <div class="container mx-auto px-4">
+      <ul class="flex flex-wrap justify-center items-center gap-6 md:gap-8">  <!-- Centrado con justify-center -->
+        <!-- Link Home -->
+        <li>
+        <a href="/cv" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 hover:text-[#99eb5f] transition-all duration-200 font-press-start text-sm group">
+          <DownloadIcon class="w-5 h-5 text-gray-400 group-hover:text-[#99eb5f] transition-colors" />  <!-- ¡Aquí aplica estilos! Color base gris, hover verde lima -->
+          <span>CV</span>
+        </a>
+      </li>
+
+        <!-- Link Proyectos -->
+        <li>
+          <a href="/proyectos" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 hover:text-[#99eb5f] transition-all duration-200 font-press-start text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+            <span>Proyectos</span>
+          </a>
+        </li>
+
+        <!-- Link Sobre Mí -->
+        <li>
+          <a href="/sobre" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 hover:text-[#99eb5f] transition-all duration-200 font-press-start text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>Sobre Mí</span>
+          </a>
+        </li>
+
+        <!-- Link Contacto -->
+        <li>
+          <a href="/contacto" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 hover:text-[#99eb5f] transition-all duration-200 font-press-start text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Contacto</span>
+          </a>
+        </li>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>
 
+
+<style>
+  /* Opcional: Glow neón para hovers en nav */
+  .hover\:text-\[\#99eb5f\]:hover {
+    text-shadow: 0 0 5px #99eb5f;
+  }
+</style>
