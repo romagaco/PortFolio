@@ -41,4 +41,7 @@
   h1 {
     @apply font-['Press_Start_2P'];  /* Usa guiones bajos para nombres con espacios */
   }
+  h2 {
+    @apply font-['Press_Start_2P'];  /* Usa guiones bajos para nombres con espacios */
+  }
 }
