@@ -1,31 +1,28 @@
 ---
 
 const contactInfo = [
-  { icon: '/img/icons/email.svg', label: 'Correo Electrónico', value: 'roberto@corona.com', link: 'mailto:roberto@corona.com', tooltip: 'Envíame un email directo' },
-  { icon: '/img/icons/phone.svg', label: 'Teléfono', value: '+502-XXXX-XXXX', link: 'tel:+502XXXXXXXXX', tooltip: 'Llama o WhatsApp' },
-  { icon: '/img/icons/instagram.svg', label: 'Instagram', value: '@romagaco', link: 'https://instagram.com/romagaco', tooltip: 'Sigue mis posts creativos' },
-  { icon: '/img/icons/facebook.svg', label: 'Facebook', value: 'Roberto Corona', link: 'https://facebook.com/romagaco', tooltip: 'Conecta en FB' },
-  { icon: '/img/icons/youtube.svg', label: 'YouTube', value: 'Canal DevGT', link: 'https://youtube.com/@romagaco', tooltip: 'Suscríbete a mis tutorials' },
-  { icon: '/img/icons/github.svg', label: 'GitHub', value: 'romagaco', link: 'https://github.com/romagaco', tooltip: 'Explora mi código open-source' }
+  { icon: '/img/icons/email.svg', label: 'Correo Electrónico', value: 'roberdex26@gmail.com'},
+  { icon: '/img/icons/phone.svg', label: 'Teléfono', value: '+502-4266-1562'},
+  { icon: '/img/icons/email.svg', label: 'Correo Electrónico', value: 'romagacotech@gmail.com'},
+
 ];
 ---
 
 
 <section id="Contacto">      
-        <section id="cv" class="bg-[#111827] text-white py-12"> <!-- py-12 para un poco más de aire, pero compacto -->
+        <section id="cv" class="bg-[#111827] text-white py-12"> 
             <div class="container mx-auto px-4">
-                <!-- Título principal -->
+
                 <h2 class="text-3xl font-bold text-center font-press-start text-[#99eb5f] mb-8">Mi Experiencia</h2>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 
-                <!-- Columna 1: Descarga CV -->
                 <div class="text-center">
                     <h3 class="text-2xl font-press-start text-green-100  mb-6">Descarga mi CV</h3>
                     <p class="text-gray-400 mb-6 text-sm leading-relaxed">Elige el idioma y descarga mi currículum actualizado con proyectos y skills.</p>
                     
-                    <div class="flex justify-center gap-4 flex-wrap"> <!-- gap-4 para cercanía -->
-                    <!-- Botón Español -->
+                    <div class="flex justify-center gap-4 flex-wrap"> 
+
                     <a 
                         href="https://drive.google.com/file/d/14srd_k-bG1raqadTRky5y5XE3n_edFoy/view?usp=drive_link" 
                         target="_blank"
@@ -43,7 +40,6 @@ const contactInfo = [
                         <span>Español (GT)</span>
                     </a>
 
-                    <!-- Botón Inglés -->
                     <a 
                         href="https://drive.google.com/file/d/1MljI94zn0M-_ueGIA6adhCoq02zEzqit/view?usp=drive_link" 
                         target="_blank"
@@ -90,7 +86,7 @@ const contactInfo = [
             </div>
     </section>
 
-    <section id="contacto1" class="bg-[#0d0d16] text-white py-12 border-b-2 border-t-2 border-[#99eb5f] mt-8"> <!-- py-12 para aire, mt-8 para espaciado -->
+    <section id="contacto1" class="bg-[#111827] text-white py-12 border-b-2 border-t-2 border-[#99eb5f] mt-8"> <!-- py-12 para aire, mt-8 para espaciado -->
   <div class="container mx-auto px-4">
     <!-- Título y descripción -->
     <div class="text-center mb-8">
@@ -103,16 +99,12 @@ const contactInfo = [
     <!-- Grid de contactos -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
       {contactInfo.map((item, index) => (
-        <a 
+        <a
           key={index}
-          href={item.link}
-          target={item.link.startsWith('http') ? '_blank' : '_self'}
-          rel={item.link.startsWith('http') ? 'noopener noreferrer' : ''}
           class="bg-gray-800 p-4 flex flex-col items-center justify-center text-center text-white font-press-start text-base h-full border-2 border-[#99eb5f] rounded-lg 
             shadow-[0_0_5px_#99eb5f] hover:shadow-[0_0_10px_#99eb5f,0_0_20px_#99eb5f,0_0_30px_#99eb5f] 
             transition-all duration-300 hover:scale-105 hover:text-[#99eb5f] group min-h-[120px]"
           aria-label={item.label}
-          data-tooltip={item.tooltip}
         >
           <img 
             src={item.icon} 
@@ -131,40 +123,3 @@ const contactInfo = [
 </section>
 </section>
 
-
-
-<script>
-  // JS simple para tooltips (hover)
-  document.querySelectorAll('a[data-tooltip]').forEach(link => {
-    link.addEventListener('mouseenter', (e) => {
-      const tooltip = document.createElement('div');
-      tooltip.className = 'absolute bg-black text-white px-3 py-1 rounded text-xs shadow-lg z-10 whitespace-nowrap';
-      tooltip.textContent = e.currentTarget.dataset.tooltip;
-      document.body.appendChild(tooltip);
-      const rect = e.currentTarget.getBoundingClientRect();
-      tooltip.style.left = `${rect.left + window.scrollX}px`;
-      tooltip.style.top = `${rect.top + window.scrollY - 35}px`;
-    });
-    link.addEventListener('mouseleave', () => {
-      document.querySelectorAll('.absolute.bg-black.text-white').forEach(t => t.remove());
-    });
-  });
-
-
-  document.querySelectorAll('a[data-tooltip]').forEach(link => {
-    link.addEventListener('mouseenter', (e) => {
-      const tooltip = document.createElement('div');
-      tooltip.className = 'absolute bg-black text-white px-3 py-1 rounded text-xs shadow-lg z-10 whitespace-nowrap border border-[#99eb5f]';
-      tooltip.textContent = e.currentTarget.dataset.tooltip;
-      document.body.appendChild(tooltip);
-      const rect = e.currentTarget.getBoundingClientRect();
-      tooltip.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
-      tooltip.style.top = `${rect.top + window.scrollY - 40}px`;
-      tooltip.style.transform = 'translateX(-50%)';
-    });
-    link.addEventListener('mouseleave', () => {
-      document.querySelectorAll('.absolute.bg-black.text-white').forEach(t => t.remove());
-    });
-  });
-  
-</script>
