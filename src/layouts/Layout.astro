@@ -1,0 +1,51 @@
+---
+import '../styles/global.css';  // This loads Tailwind everywhere
+const { title } = Astro.props;
+---
+
+
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>Roberto Corona | Full Stack Developer</title>
+		<meta name="title" content="Roberto Corona | Full Stack Developer" />
+		<meta name="description" content="Desarrollador Full Stack con 10 años de experiencia en atención al cliente. Especializado en Frontend, Backend y desarrollo web moderno usando React, Node.js, Python y más." />
+		<meta name="keywords" content="Full Stack Developer, Frontend, Backend, JavaScript, React, Node.js, Python, Django, Astro, Guatemala, Developer Guatemala" />
+		<meta name="author" content="Roberto Corona" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://robertocorona.dev/" />
+		<meta property="og:title" content="Roberto Corona | Full Stack Developer" />
+		<meta property="og:description" content="Portfolio profesional de desarrollo web - Full Stack Developer especializado en crear soluciones técnicas eficientes" />
+		<meta property="og:image" content="/PortFolio/img/profilePic/profile.png" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://robertocorona.dev/" />
+		<meta name="twitter:title" content="Roberto Corona | Full Stack Developer" />
+		<meta name="twitter:description" content="Portfolio profesional de desarrollo web - Full Stack Developer" />
+		<meta name="twitter:image" content="/PortFolio/img/profilePic/profile.png" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #111827;
+	}
+</style>

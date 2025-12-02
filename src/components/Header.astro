@@ -1,0 +1,61 @@
+---
+import DownloadIcon from '../../public/img/icons/download.svg';
+---
+
+
+
+<header>
+<!-- Header Centrado Superior -->
+  <header class="bg-[#0d0d16] text-white py-8 border-b-2 border-[#99eb5f]">  <!-- Borde verde lima para glow -->
+    <div class="container mx-auto px-4 flex items-center justify-center gap-4">
+      <img src="/PortFolio/img/icons/crown1.svg" alt="Corona" class="w-8 h-8 animate-bounce text-[#99eb5f]">  <!-- Color verde en el SVG si es fill -->
+      <h1 class="text-3xl font-bold text-center font-press-start text-[#99eb5f]">Roberto Corona</h1>  <!-- Verde para pop -->
+    </div>
+  </header>
+
+  <!-- Nav Centrado Debajo -->
+  <nav class="bg-[#0d0d16] text-white py-4 border-b-2 border-[#99eb5f]"">  <!-- Fondo oscuro como terminal -->
+    <div class="container mx-auto px-4">
+      <ul class="flex flex-wrap justify-center items-center gap-6 md:gap-8">  <!-- Centrado con justify-center -->
+        <!-- Link Sobre Mí -->
+        <li>
+          <a href="#SobreMi" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 hover:text-[#99eb5f] transition-all duration-200 font-press-start text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+            <span>Sobre Mí</span>
+          </a>
+        </li>
+
+        <li>
+        <a href="#cv" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 hover:text-[#99eb5f] transition-all duration-200 font-press-start text-sm group">
+          <DownloadIcon class="w-5 h-5 text-gray-400 group-hover:text-[#99eb5f] transition-colors" />  <!-- ¡Aquí aplica estilos! Color base gris, hover verde lima -->
+          <span>CV</span>
+        </a>
+      </li>
+      
+        <!-- Link Contacto -->
+        <li>
+          <a href="#contacto1" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800 hover:text-[#99eb5f] transition-all duration-200 font-press-start text-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Contacto</span>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+
+
+
+<style>
+  /* Opcional: Glow neón para hovers en nav */
+  .hover\:text-\[\#99eb5f\]:hover {
+    text-shadow: 0 0 5px #99eb5f;
+  }
+</style>

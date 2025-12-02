@@ -1,0 +1,150 @@
+---
+
+const skills = [
+
+  { id: 1, name: 'HTML', src: '/PortFolio/img/icons/stack/Html.svg', category: 'Front-end' },
+  { id: 2, name: 'CSS', src: '/PortFolio/img/icons/stack/Css.svg', category: 'Front-end' },
+  { id: 3, name: 'JavaScript', src: '/PortFolio/img/icons/stack/Javascript.svg', category: 'Front-end' },
+  { id: 4, name: 'React', src: '/PortFolio/img/icons/stack/React.svg', category: 'Front-end' },
+  { id: 5, name: 'Angular', src: '/PortFolio/img/icons/stack/Angular.svg', category: 'Front-end' },
+  { id: 6, name: 'Vue.js', src: '/PortFolio/img/icons/stack/Vuejs.svg', category: 'Front-end' },
+  { id: 7, name: 'TypeScript', src: '/PortFolio/img/icons/stack/Typescript.svg', category: 'Front-end' },
+  { id: 8, name: 'Bootstrap', src: '/PortFolio/img/icons/stack/Bootstrap.svg', category: 'Front-end' },
+  { id: 9, name: 'Tailwind', src: '/PortFolio/img/icons/stack/Tailwindcss.svg', category: 'Front-end' },
+  { id: 10, name: 'Astro', src: '/PortFolio/img/icons/stack/Astro.svg', category: 'Front-end' },
+  { id: 11, name: 'WordPress', src: '/PortFolio/img/icons/stack/Wordpress.svg', category: 'Front-end' },
+  
+
+  { id: 'sep1', name: '', src: '', category: 'separator' },
+  
+
+  { id: 12, name: 'Node.js', src: '/PortFolio/img/icons/stack/NodeJs.svg', category: 'Back-end' },
+  { id: 13, name: 'Python', src: '/PortFolio/img/icons/stack/Python.svg', category: 'Back-end' },
+  { id: 14, name: 'Django', src: '/PortFolio/img/icons/stack/Django.svg', category: 'Back-end' },
+  { id: 15, name: 'Go', src: '/PortFolio/img/icons/stack/Go.svg', category: 'Back-end' },
+  { id: 16, name: 'Java', src: '/PortFolio/img/icons/stack/Java.svg', category: 'Back-end' },
+  { id: 17, name: 'SQL', src: '/PortFolio/img/icons/stack/SQL.svg', category: 'Back-end' },
+  
+  
+  { id: 'sep2', name: '', src: '', category: 'separator' },
+  
+ 
+  { id: 18, name: 'Docker', src: '/PortFolio/img/icons/stack/Docker.svg', category: 'Full-stack' },
+  { id: 19, name: 'GitHub', src: '/PortFolio/img/icons/stack/Github.svg', category: 'Full-stack' },
+  { id: 20, name: 'Linux', src: '/PortFolio/img/icons/stack/Linux.svg', category: 'Full-stack' },
+  { id: 21, name: 'Rust', src: '/PortFolio/img/icons/stack/Rust.svg', category: 'Full-stack' },
+  { id: 22, name: 'Streamlit', src: '/PortFolio/img/icons/stack/Streamlit.svg', category: 'Full-stack' },
+  { id: 23, name: 'Figma', src: '/PortFolio/img/icons/stack/Figma.svg', category: 'Full-stack' } 
+];
+
+
+const duplicatedSkills = [...skills, ...skills];
+---
+
+<section class="py-8 bg-white dark:bg-gray-900 relative overflow-hidden">
+  <div class="container mx-auto px-4 flex items-center justify-center gap-4 mb-8">
+            <h2 class="text-3xl font-bold text-center font-press-start text-[#99eb5f] mt-15">Mis Habilidades Técnicas</h2> 
+        </div>
+  
+  <div id="tooltip" class="absolute hidden bg-gray-800 text-white px-4 py-2 rounded-lg shadow-lg z-50 pointer-events-none whitespace-nowrap border border-[#99eb5f] bg-opacity-95">
+    <span id="tooltip-text"></span>
+  </div>
+  
+  <div class="relative">
+    <div class="marquee-container flex items-center whitespace-nowrap">
+      {duplicatedSkills.map(skill => (
+        <div 
+          key={skill.id}
+          class={`skill-box inline-flex flex-col items-center mx-2 transition-all duration-300 group ${
+            skill.category === 'separator' 
+              ? 'w-1 h-20 bg-gray-400 mx-6' 
+              : 'bg-gray-800 border-2 border-[#99eb5f] rounded-lg p-3 shadow-[0_0_5px_#99eb5f] hover:shadow-[0_0_10px_#99eb5f] hover:scale-105 min-w-[80px]'
+          }`}
+          data-skill={skill.name}
+          data-category={skill.category}
+        >
+          {skill.category !== 'separator' && (
+            <>
+              <img 
+                src={skill.src} 
+                alt={skill.name}
+                class="w-8 h-8 md:w-10 md:h-10 object-contain cursor-pointer group-hover:scale-110 transition-transform mb-1"
+                loading="lazy"
+              />
+              <span class="text-xs md:text-sm text-white text-center leading-tight font-mono">
+                {skill.name}
+              </span>
+            </>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  <style>
+    .marquee-container {
+      animation: marquee 35s linear infinite; 
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .marquee-container:hover {
+      animation-play-state: paused;
+    }
+    
+
+  </style>
+</section>
+
+<script>
+  // Run in both development and production
+  const boxes = document.querySelectorAll('.skill-box img');
+  const tooltip = document.getElementById('tooltip');
+  const tooltipText = document.getElementById('tooltip-text');
+  const marqueeContainer = document.querySelector('.marquee-container');
+  
+  boxes.forEach(img => {
+    const box = img.closest('.skill-box');
+    
+    img.addEventListener('click', (e) => {
+      document.querySelectorAll('.skill-box').forEach(b => b.classList.remove('active'));
+      box.classList.add('active', 'shadow-[0_0_15px_#99eb5f]', 'scale-110');
+      
+      const skillName = box.dataset.skill;
+      const category = box.dataset.category;
+      tooltipText.textContent = `${skillName} (${category})`;
+      
+      const rect = box.getBoundingClientRect();
+      tooltip.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
+      tooltip.style.top = `${rect.top + window.scrollY - 50}px`;
+      tooltip.style.transform = 'translateX(-50%)';
+      tooltip.classList.remove('hidden');
+      
+      marqueeContainer.style.animationPlayState = 'paused';
+      setTimeout(() => {
+        marqueeContainer.style.animationPlayState = 'running';
+        tooltip.classList.add('hidden');
+        box.classList.remove('active', 'shadow-[0_0_15px_#99eb5f]', 'scale-110');
+      }, 2500);
+      
+      console.log(`Clicked: ${skillName} - ${category}`);
+    });
+    
+    box.addEventListener('mouseenter', (e) => {
+      const skillName = box.dataset.skill;
+      tooltipText.textContent = skillName;
+      const rect = box.getBoundingClientRect();
+      tooltip.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
+      tooltip.style.top = `${rect.top + window.scrollY - 40}px`;
+      tooltip.style.transform = 'translateX(-50%)';
+      tooltip.classList.remove('hidden');
+    });
+    
+    box.addEventListener('mouseleave', () => {
+      tooltip.classList.add('hidden');
+    });
+  });
+</script>
