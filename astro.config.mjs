@@ -1,13 +1,9 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
+import tailwind from '@astrojs/tailwind';  // Assuming you have this
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [
-    tailwind({
-      applyBaseStyles: false, // Disable base styles injection to avoid path issues
-    })
-  ],
   site: 'https://romagaco.github.io',
-  base: '/PortFolio',
+  base: '/PortFolio',  // Key for subpath deploys!
+  output: 'static',
+  integrations: [tailwind()],
 });
