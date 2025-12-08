@@ -1,3 +1,7 @@
+---
+const BASE_URL = import.meta.env.BASE_URL;
+---
+
 <section
     id="Backend"
     class="bg-[#111827] text-white py-12 border-b-2 border-t-2 border-[#99eb5f] mt-8"
@@ -72,7 +76,7 @@
                     class="mb-4 aspect-video bg-gray-700 rounded-lg overflow-hidden flex items-center justify-center"
                 >
                     <img
-                        src="/img/working.jpg"
+                        src={`${BASE_URL}/img/working.jpg`}
                         alt="Django"
                         class="w-20 h-20"
                     />
@@ -119,7 +123,11 @@
                 <div
                     class="mb-4 aspect-video bg-gray-700 rounded-lg overflow-hidden flex items-center justify-center"
                 >
-                    <img src="/img/working.jpg" alt="SQL" class="w-20 h-20" />
+                    <img
+                        src={`${BASE_URL}/img/working.jpg`}
+                        alt="SQL"
+                        class="w-20 h-20"
+                    />
                 </div>
                 <h3 class="text-xl font-press-start text-[#99eb5f] mb-3">
                     Base de Datos
